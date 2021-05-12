@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "colormeoutlines",
+  "version": "${version}",
+
+  "name": "Color Me Outlines",
+  "description": "",
+  "authors": [
+    "LordDeatHunter"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": "https://github.com/LordDeatHunter/ColorMeOutlines"
+  },
+
+  "license": "MIT",
+  "icon": "cmo.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+    ],
+    "client": [
+      "wraith.colormeoutlines.ColorMeOutlinesClient"
+    ],
+    "modmenu": [
+      "wraith.colormeoutlines.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "colormeoutlines.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "text.autoconfig.colormeoutlines.title": "Color Me Outlines",
+  "text.autoconfig.colormeoutlines.option.red": "Red",
+  "text.autoconfig.colormeoutlines.option.green": "Green",
+  "text.autoconfig.colormeoutlines.option.blue": "Blue",
+  "text.autoconfig.colormeoutlines.option.alpha": "Alpha",
+  "text.autoconfig.colormeoutlines.option.width": "Outline Width"
+}
