@@ -10,16 +10,22 @@ import org.apache.logging.log4j.Logger;
 @Environment(EnvType.CLIENT)
 public class ColorMeOutlinesClient implements ClientModInitializer {
 
+    private static boolean cloth_mode = false;
+
     public static final Logger LOGGER = LogManager.getLogger();
 
     @Override
     public void onInitializeClient() {
         if (FabricLoader.getInstance().isModLoaded("cloth-config2")) {
             AutoConfigIntegration.load();
+            cloth_mode = true;
         } else {
             ModConfig.getInstance().load();
         }
         LOGGER.info("[Color Me Outlines] has successfully been loaded!");
     }
 
+    public static boolean isClothMode() {
+        return cloth_mode;
+    }
 }

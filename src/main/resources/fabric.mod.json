@@ -4,13 +4,14 @@
   "version": "${version}",
 
   "name": "Color Me Outlines",
-  "description": "",
+  "description": "Configurable block highlights",
   "authors": [
     "LordDeatHunter"
   ],
   "contact": {
-    "homepage": "",
-    "sources": "https://github.com/LordDeatHunter/ColorMeOutlines"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/color-me-outlines",
+    "sources": "https://github.com/LordDeatHunter/ColorMeOutlines",
+    "issues": "https://github.com/LordDeatHunter/ColorMeOutlines/issues"
   },
 
   "license": "MIT",
@@ -31,9 +32,12 @@
     "colormeoutlines.mixins.json"
   ],
 
+  "accessWidener" : "colormeoutlines.accesswidener",
+
   "depends": {
-    "fabricloader": ">=0.7.4",
+    "fabricloader": ">=0.11.3",
     "fabric": "*",
-    "minecraft": "1.16.x"
+    "minecraft": "1.17.x",
+    "java": ">=16"
   }
 }

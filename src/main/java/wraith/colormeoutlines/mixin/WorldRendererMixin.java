@@ -1,6 +1,5 @@
 package wraith.colormeoutlines.mixin;
 
-import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.render.BufferBuilderStorage;
 import net.minecraft.client.render.VertexConsumer;
@@ -12,10 +11,9 @@ import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArgs;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
+import wraith.colormeoutlines.ColorMeOutlinesClient;
 import wraith.colormeoutlines.CustomRenderLayer;
 import wraith.colormeoutlines.ModCompatConfig;
 import wraith.colormeoutlines.ModConfig;
@@ -23,16 +21,16 @@ import wraith.colormeoutlines.ModConfig;
 @Mixin(WorldRenderer.class)
 public class WorldRendererMixin {
 
-    @Shadow @Final private BufferBuilderStorage bufferBuilders;
+    @Shadow
+    @Final
+    private BufferBuilderStorage bufferBuilders;
 
     @ModifyArgs(method = "drawBlockOutline", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/WorldRenderer;drawShapeOutline(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumer;Lnet/minecraft/util/shape/VoxelShape;DDDFFFF)V"))
     public void drawBlockOutline(Args args, MatrixStack matrixStack, VertexConsumer vertexConsumer, Entity entity, double d, double e, double f, BlockPos blockPos, BlockState blockState) {
-
         VertexConsumer buffer = bufferBuilders.getEntityVertexConsumers().getBuffer(CustomRenderLayer.OUTLINE);
-
         args.set(1, buffer);
 
-        if (FabricLoader.getInstance().isModLoaded("cloth-config2")) {
+        if (ColorMeOutlinesClient.isClothMode()) {
             ModCompatConfig config = ModCompatConfig.getInstance();
             args.set(6, config.red / 255F);
             args.set(7, config.green / 255F);
@@ -47,10 +45,5 @@ public class WorldRendererMixin {
         }
 
     }
-
-    @Inject(method = "drawBlockOutline", at = @At("RETURN"))
-    public void postSetup(MatrixStack matrixStack, VertexConsumer vertexConsumer, Entity entity, double d, double e, double f, BlockPos blockPos, BlockState blockState, CallbackInfo ci) {
-    }
-
 
 }
