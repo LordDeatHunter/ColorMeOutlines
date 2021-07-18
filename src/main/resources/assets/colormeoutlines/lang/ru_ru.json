@@ -1,0 +1,8 @@
+{
+  "text.autoconfig.colormeoutlines.title": "Color Me Outlines",
+  "text.autoconfig.colormeoutlines.option.red": "Красный",
+  "text.autoconfig.colormeoutlines.option.green": "Зелёный",
+  "text.autoconfig.colormeoutlines.option.blue": "Синий",
+  "text.autoconfig.colormeoutlines.option.alpha": "Альфа-канал",
+  "text.autoconfig.colormeoutlines.option.width": "Ширина границы"
+}
