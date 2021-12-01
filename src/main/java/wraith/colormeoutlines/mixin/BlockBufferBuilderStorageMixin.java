@@ -23,9 +23,7 @@ public abstract class BlockBufferBuilderStorageMixin {
 
     @Inject(method = "<init>", at = @At("RETURN"))
     public void init(CallbackInfo callbackInfo) {
-        RenderLayer renderLayer = CustomRenderLayer.OUTLINE;
-        BufferBuilder builder = new BufferBuilder(renderLayer.getExpectedBufferSize());
-        this.builders.put(renderLayer, builder);
+        this.builders.put(CustomRenderLayer.OUTLINE, new BufferBuilder(CustomRenderLayer.OUTLINE.getExpectedBufferSize()));
     }
 
 }

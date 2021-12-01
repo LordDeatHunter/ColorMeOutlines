@@ -17,11 +17,7 @@ public class CustomLineWidth extends RenderPhase.LineWidth {
     @Override
     public void startDrawing() {
         super.startDrawing();
-        if (ColorMeOutlinesClient.isClothMode()) {
-            RenderSystem.lineWidth(ModCompatConfig.getInstance().width * 0.5F);
-        } else {
-            RenderSystem.lineWidth(ModConfig.getInstance().getWidth() * 0.5F);
-        }
+        RenderSystem.lineWidth(ColorMeOutlinesClient.getConfig().getWidth() * 0.5F);
     }
 
     @Override

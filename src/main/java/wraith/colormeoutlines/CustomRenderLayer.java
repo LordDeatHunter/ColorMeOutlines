@@ -10,7 +10,7 @@ import wraith.colormeoutlines.mixin.RenderLayerInvoker;
 @Environment(EnvType.CLIENT)
 public class CustomRenderLayer extends RenderLayer {
 
-    public static final RenderLayer OUTLINE = RenderLayerInvoker.of("colormeoutlines", VertexFormats.LINES, VertexFormat.DrawMode.LINES, 256, true, true,
+    public static final RenderLayer OUTLINE = RenderLayerInvoker.of("colormeoutlines_outline", VertexFormats.LINES, VertexFormat.DrawMode.LINES, 256, true, true,
             RenderLayer.MultiPhaseParameters.builder()
                     .shader(LINES_SHADER)
                     .layering(VIEW_OFFSET_Z_LAYERING)

@@ -4,6 +4,7 @@
   "package": "wraith.colormeoutlines.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "BlockModelRendererMixin"
   ],
   "client": [
     "BlockBufferBuilderStorageMixin",

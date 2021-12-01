@@ -4,7 +4,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.util.math.MathHelper;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,10 +12,11 @@ import java.io.IOException;
 import java.util.Scanner;
 
 @Environment(EnvType.CLIENT)
-public class ModConfig {
+public class ModConfig implements IColorMeOutlinesConfig {
 
     private static ModConfig INSTANCE = null;
 
+    private boolean highlight = false;
     private int red = 0;
     private int green = 0;
     private int blue = 0;
@@ -30,50 +30,6 @@ public class ModConfig {
             INSTANCE = new ModConfig();
         }
         return INSTANCE;
-    }
-
-    public int getAlpha() {
-        return alpha;
-    }
-
-    public int getRed() {
-        return red;
-    }
-
-    public int getGreen() {
-        return green;
-    }
-
-    public int getBlue() {
-        return blue;
-    }
-
-    public void setRed(int color) {
-        this.red = setColor(color);
-    }
-
-    public void setGreen(int color) {
-        this.green = setColor(color);
-    }
-
-    public void setBlue(int color) {
-        this.blue = setColor(color);
-    }
-
-    public void setAlpha(int color) {
-        this.alpha = setColor(alpha);
-    }
-
-    public void setWidth(int width) {
-        this.width = MathHelper.clamp(width, 1, 10);
-    }
-
-    public int getWidth() {
-        return this.width;
-    }
-
-    private static int setColor(int color) {
-        return MathHelper.clamp(color, 0, 255);
     }
 
     public void save() {
@@ -141,6 +97,31 @@ public class ModConfig {
         if (json.has("width")) {
             this.width = json.get("width").getAsInt();
         }
+    }
+
+    @Override
+    public int getRed() {
+        return this.red;
+    }
+
+    @Override
+    public int getGreen() {
+        return this.green;
+    }
+
+    @Override
+    public int getBlue() {
+        return this.blue;
+    }
+
+    @Override
+    public int getAlpha() {
+        return this.alpha;
+    }
+
+    @Override
+    public int getWidth() {
+        return this.width;
     }
 
 }

@@ -14,6 +14,10 @@ public class ColorMeOutlinesClient implements ClientModInitializer {
 
     public static final Logger LOGGER = LogManager.getLogger();
 
+    public static IColorMeOutlinesConfig getConfig() {
+        return isClothMode() ? ModCompatConfig.getInstance() : ModConfig.getInstance();
+    }
+
     @Override
     public void onInitializeClient() {
         if (FabricLoader.getInstance().isModLoaded("cloth-config2")) {
@@ -28,4 +32,5 @@ public class ColorMeOutlinesClient implements ClientModInitializer {
     public static boolean isClothMode() {
         return cloth_mode;
     }
+
 }
