@@ -50,7 +50,6 @@ public class ModConfig implements IColorMeOutlinesConfig {
         }
         file.setReadable(true);
         file.setWritable(true);
-        file.setExecutable(true);
         try (FileWriter writer = new FileWriter(file)) {
             writer.write(json.toString());
         } catch (IOException e) {
