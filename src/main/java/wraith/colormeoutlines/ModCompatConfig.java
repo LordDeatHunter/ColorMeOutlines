@@ -19,7 +19,7 @@ public class ModCompatConfig implements ConfigData, IColorMeOutlinesConfig {
     private int blue = 0;
     @ConfigEntry.BoundedDiscrete(min = 0, max = 255)
     private int alpha = 102;
-    @ConfigEntry.BoundedDiscrete(min = 1, max = 10)
+    @ConfigEntry.BoundedDiscrete(min = 1, max = 20)
     private int width = 5;
 
     private ModCompatConfig() {
