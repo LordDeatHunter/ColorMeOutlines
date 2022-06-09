@@ -10,12 +10,15 @@ import org.apache.logging.log4j.Logger;
 @Environment(EnvType.CLIENT)
 public class ColorMeOutlinesClient implements ClientModInitializer {
 
-    private static boolean cloth_mode = false;
-
     public static final Logger LOGGER = LogManager.getLogger();
+    private static boolean cloth_mode = false;
 
     public static IColorMeOutlinesConfig getConfig() {
         return isClothMode() ? ModCompatConfig.getInstance() : ModConfig.getInstance();
+    }
+
+    public static boolean isClothMode() {
+        return cloth_mode;
     }
 
     @Override
@@ -27,10 +30,6 @@ public class ColorMeOutlinesClient implements ClientModInitializer {
             ModConfig.getInstance().load();
         }
         LOGGER.info("[Color Me Outlines] has successfully been loaded!");
-    }
-
-    public static boolean isClothMode() {
-        return cloth_mode;
     }
 
 }

@@ -16,14 +16,13 @@ public class ModConfig implements IColorMeOutlinesConfig {
 
     private static ModConfig INSTANCE = null;
 
-    private boolean highlight = false;
     private int red = 0;
     private int green = 0;
     private int blue = 0;
     private int alpha = 102;
     private int width = 5;
 
-    private ModConfig(){}
+    private ModConfig() {}
 
     public static ModConfig getInstance() {
         if (INSTANCE == null) {

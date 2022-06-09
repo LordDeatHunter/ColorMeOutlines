@@ -24,7 +24,7 @@ public abstract class WorldRendererMixin {
     @Final
     private BufferBuilderStorage bufferBuilders;
 
-    @ModifyArgs(method = "drawBlockOutline", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/WorldRenderer;drawShapeOutline(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumer;Lnet/minecraft/util/shape/VoxelShape;DDDFFFF)V"))
+    @ModifyArgs(method = "drawBlockOutline", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/WorldRenderer;drawCuboidShapeOutline(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumer;Lnet/minecraft/util/shape/VoxelShape;DDDFFFF)V"))
     public void drawBlockOutline(Args args, MatrixStack matrices, VertexConsumer vertexConsumer, Entity entity, double d, double e, double f, BlockPos blockPos, BlockState blockState) {
         IColorMeOutlinesConfig config = ColorMeOutlinesClient.getConfig();
         VertexConsumer buffer = bufferBuilders.getEntityVertexConsumers().getBuffer(CustomRenderLayer.OUTLINE);
