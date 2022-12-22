@@ -1,0 +1,8 @@
+{
+  "text.autoconfig.colormeoutlines.title": "为轮廓上色",
+  "text.autoconfig.colormeoutlines.option.red": "红色",
+  "text.autoconfig.colormeoutlines.option.green": "绿色",
+  "text.autoconfig.colormeoutlines.option.blue": "蓝色",
+  "text.autoconfig.colormeoutlines.option.alpha": "轮廓深度",
+  "text.autoconfig.colormeoutlines.option.width": "轮廓宽度"
+}
